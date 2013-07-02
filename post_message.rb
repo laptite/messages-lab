@@ -1,6 +1,10 @@
 # post_message.rb
+# not needed to run application
+# used to demonstrate that you can post a message to your app
+# by running rubypostmessage.rb
 
 require "typhoeus"
+
 
 puts ""
 print "What is your name? "
@@ -17,6 +21,7 @@ puts ""
 print "Sending message..."
 
 uri = "127.0.0.1:9393/" #set to whatever server is running your sinatra
+Typhoeus.post(uri, :body => {:sender => sender, :receiver => receiver, :content => message})
 
 # TODO: Post the message to the server
 
